@@ -1,0 +1,62 @@
+name: Compile Electorn Action
+author: x6Pnda
+description: GitHub Action for compiling Electron apps using electron-builder
+
+inputs:
+  github_token:
+    description: GitHub authentication token
+    required: true
+  mac_certs:
+    description: Base64-encoded code signing certificate for macOS
+    required: false
+  mac_certs_password:
+    description: Password for decrypting `mac_certs`
+    required: false
+  windows_certs:
+    description: Base64-encoded code signing certificate for Windows
+    required: false
+  windows_certs_password:
+    description: Password for decrypting `windows_certs`
+    required: false
+  apple_id:
+    description: Apple ID email for notarizing MacOS builds
+    required: false
+  apple_id_password:
+    description: Apple ID password for notarizing MacOS builds
+    required: false
+  release:
+    description: Whether the app should be released after a successful build
+    required: false
+    default: false
+  package_root:
+    description: Directory where NPM/Yarn commands should be run
+    required: false
+    default: "."
+  build_script_name:
+    description: Name of the optional NPM build script which is executed before `electron-builder`
+    required: false
+    default: build
+  skip_build:
+    description: Whether the action should execute the NPM build script before running `electron-builder`
+    required: false
+    default: false
+  args:
+    description: Other arguments to pass to the `electron-builder` command, e.g. configuration overrides
+    required: false
+    default: ""
+  max_build_attempts:
+    description: Maximum number of attempts for completing the build and release step
+    required: false
+    default: "1"
+  package_manager:
+    description: What package mamanger to use. (NPM, PNPM, Yarn)
+    require: false
+    default: "NPM"
+
+runs:
+  using: node16
+  main: dist/index.js
+
+branding:
+  icon: upload-cloud
+  color: blue

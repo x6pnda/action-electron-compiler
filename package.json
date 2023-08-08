@@ -1,0 +1,21 @@
+{
+    "name": "action-compile-electron",
+    "version": "1.0.0",
+    "description": "GitHub Action for compiling Electron applications",
+    "author": {
+        "name": "x6Pnda",
+        "email": "x6pnda@gmail.com"
+    },
+    "repository": "github:x6pnda/action-compile-electron",
+    "license": "MIT",
+    "private": true,
+    "type": "module",
+    "main": "./dist/index.js",
+    "scripts": {
+        "build": "tsc -p tsconfig.build.json"
+    },
+    "devDependencies": {
+        "@types/node": "^20.4.8",
+        "typescript": "^5.1.6"
+    }
+}
