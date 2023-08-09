@@ -24,6 +24,9 @@ inputs:
     apple_id_password:
         description: Apple ID password for notarizing MacOS builds
         required: false
+    apple_id_team:
+        description: Apple ID teamID for notarizing MacOS builds
+        required: false    
     release:
         description: Whether the app should be released after a successful build
         required: false

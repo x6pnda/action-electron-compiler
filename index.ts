@@ -91,6 +91,7 @@ const getInput = <B extends boolean>(
 
 		setEnv("APPLE_ID", getInput("apple_id"));
 		setEnv("APPLE_ID_PASSWORD", getInput("apple_id_password"));
+		setEnv("APPLE_ID_TEAM", getInput("apple_id_team"));
 	} else if (platform === "windows") {
 		setEnv("CSC_LINK", getInput("windows_certs"));
 		setEnv("CSC_KEY_PASSWORD", getInput("windows_certs_password"));
